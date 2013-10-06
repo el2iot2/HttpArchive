@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace HttpArchive
+namespace Automatonic.HttpArchive
 {
     /// <summary>
     /// This object describes timings for various events (states) fired during the page load. 

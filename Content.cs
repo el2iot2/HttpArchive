@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace HttpArchive
+namespace Automatonic.HttpArchive
 {
     /// <summary>
     /// This object describes details about response content (embedded in response object).

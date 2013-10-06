@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace HttpArchive
+namespace Automatonic.HttpArchive
 {
     /// <summary>
     /// Creator and browser objects share the same structure.

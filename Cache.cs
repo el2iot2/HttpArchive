@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace HttpArchive
+namespace Automatonic.HttpArchive
 {
     /// <summary>
     /// This objects contains info about a request coming from browser cache.

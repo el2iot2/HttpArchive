@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace HttpArchive
+namespace Automatonic.HttpArchive
 {
     /// <summary>
     /// This object represents the root of exported data.
