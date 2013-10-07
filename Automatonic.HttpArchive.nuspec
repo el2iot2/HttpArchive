@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$-alpha</version>
+    <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>https://raw.github.com/automatonic/http-archive-net/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/automatonic/http-archive-net</projectUrl>
-    <iconUrl>https://identicons.github.com/httparchive.png</iconUrl>
+    <iconUrl>http://automatonic.net/apple-touch-icon-114x114-precomposed.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial NuGet test release.</releaseNotes>

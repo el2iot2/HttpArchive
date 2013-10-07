@@ -37,6 +37,7 @@
     <Compile Include="Content.cs" />
     <Compile Include="Cookie.cs" />
     <Compile Include="ArchiveObject.cs" />
+    <Compile Include="Document.cs" />
     <Compile Include="Software.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="NamedValue.cs" />

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpArchive", "HttpArchive.csproj", "{5F0179CC-E747-4E02-B805-7E2D1EE87A0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automatonic.HttpArchive", "Automatonic.HttpArchive.csproj", "{5F0179CC-E747-4E02-B805-7E2D1EE87A0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
