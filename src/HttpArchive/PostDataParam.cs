@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
+using System.Text.Json;
 
-namespace Automatonic.HttpArchive
+namespace HttpArchive
 {
     /// <summary>
     /// An element in the list of posted parameters, if any (embedded in postData object).

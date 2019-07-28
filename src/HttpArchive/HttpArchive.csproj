@@ -19,8 +19,12 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl> 
     <RootNamespace>HttpArchive</RootNamespace>
     <AssemblyName>HttpArchive</AssemblyName>
-    <MinClientVersion>2.12</MinClientVersion>
+    <MinClientVersion>4.3.0</MinClientVersion>
     <IncludeSymbols>true</IncludeSymbols>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="4.6.0-preview7.19362.9" />
+  </ItemGroup>
 
 </Project>

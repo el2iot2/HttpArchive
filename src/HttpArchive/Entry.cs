@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
+using System.Text.Json;
 
-namespace Automatonic.HttpArchive
+namespace HttpArchive
 {
     /// <summary>
     /// This object represents an entry in the array with all exported HTTP requests
