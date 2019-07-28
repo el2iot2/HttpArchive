@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Authors>el2iot2</Authors>
+    <Company>Automatonic Industries</Company>
+    <Product>HttpArchive</Product>
+    <Description>HttpArchive supports HTTP Archive (HAR) Format serialization in .NET Standard</Description>
+    <Copyright>Copyright © Elliott B. Edwards 2019</Copyright>
+    <Summary>HttpArchive supports HTTP Archive (HAR) Format serialization in .NET Standard</Summary>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Title>HttpArchive</Title>
+    <PackageId>HttpArchive</PackageId>
+    <PackageTags>har;http archive;json</PackageTags>
+    <PackageIconUrl>https://www.gravatar.com/avatar/c16a5d8d5d380ec960efd62a3f6abbe1?s=64</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/el2iot2/http-archive-net</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl> 
+    <RootNamespace>HttpArchive</RootNamespace>
+    <AssemblyName>HttpArchive</AssemblyName>
+    <MinClientVersion>2.12</MinClientVersion>
+    <IncludeSymbols>true</IncludeSymbols>
+  </PropertyGroup>
+
+</Project>
