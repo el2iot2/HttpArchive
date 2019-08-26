@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace HttpArchive
 {
@@ -14,7 +10,6 @@ namespace HttpArchive
     /// Depending on the browser, onContentLoad property represents 
     /// DOMContentLoad event or document.readyState == interactive.
     /// </remarks>
-    [JsonObject]
     public class Entry : ArchiveObject
     {
         /// <summary>
@@ -23,43 +18,43 @@ namespace HttpArchive
         /// <remarks>
         /// Leave out this field if the application does not support grouping by pages. 
         /// </remarks>
-        [JsonProperty(PropertyName = "pageref")]
+        [JsonPropertyName("pageref")]
         public string PageRef { get; set; }
 
         /// <summary>
         /// Date and time stamp of the request start (ISO 8601 - YYYY-MM-DDThh:mm:ss.sTZD). 
         /// </summary>
-        [JsonProperty(PropertyName = "startedDateTime")]
+        [JsonPropertyName("startedDateTime")]
         public string StartedDateTime { get; set; }
 
         /// <summary>
         /// Detailed info about the request. 
         /// </summary>
-        [JsonProperty(PropertyName = "request")]
+        [JsonPropertyName("request")]
         public Request Request { get; set; }
 
         /// <summary>
         /// Detailed info about the response. 
         /// </summary>
-        [JsonProperty(PropertyName = "response")]
+        [JsonPropertyName("response")]
         public Response Response { get; set; }
 
         /// <summary>
         /// Info about cache usage. 
         /// </summary>
-        [JsonProperty(PropertyName = "cache")]
+        [JsonPropertyName("cache")]
         public Cache Cache { get; set; }
 
         /// <summary>
         /// Detailed timing info about request/response round trip.
         /// </summary>
-        [JsonProperty(PropertyName = "timings")]
+        [JsonPropertyName("timings")]
         public Timings Timings { get; set; }
 
         /// <summary>
         /// (new in 1.2) - IP address of the server that was connected (result of DNS resolution). 
         /// </summary>
-        [JsonProperty(PropertyName = "serverIPAddress")]
+        [JsonPropertyName("serverIPAddress")]
         public string ServerIPAddress { get; set; }
 
         /// <summary>
@@ -73,7 +68,7 @@ namespace HttpArchive
         /// any other unique connection ID can be used instead 
         /// (e.g. connection index). Leave out this field if the application doesn't support this info.
         /// </remarks>
-        [JsonProperty(PropertyName = "connection")]
+        [JsonPropertyName("connection")]
         public string Connection { get; set; }
     }
 }

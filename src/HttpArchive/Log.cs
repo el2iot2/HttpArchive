@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace HttpArchive
 {
@@ -12,37 +9,36 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#log
     /// </remarks>
-    [JsonObject]
     public class Log : ArchiveObject
     {
         /// <summary>
         /// Version number of the format. If empty, string "1.1" is assumed by default.
         /// </summary>
-        [JsonProperty(PropertyName = "version")]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
 
         /// <summary>
         /// Name and version info of the log creator application.
         /// </summary>
-        [JsonProperty(PropertyName = "creator")]
+        [JsonPropertyName("creator")]
         public Software Creator { get; set; }
 
         /// <summary>
         /// Name and version info of used browser.
         /// </summary>
-        [JsonProperty(PropertyName="browser")]
+        [JsonPropertyName("browser")]
         public Software Browser { get; set; }
 
         /// <summary>
         /// List of all exported (tracked) pages. Leave out this field if the application does not support grouping by pages.
         /// </summary>
-        [JsonProperty(PropertyName="pages")]
+        [JsonPropertyName("pages")]
         public IList<Page> Pages { get; set; }
 
         /// <summary>
         /// List of all exported (tracked) requests.
         /// </summary>
-        [JsonProperty(PropertyName="entries")]
+        [JsonPropertyName("entries")]
         public IList<Entry> Entries { get; set; }
 
     }

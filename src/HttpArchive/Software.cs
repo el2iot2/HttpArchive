@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace HttpArchive
 {
@@ -12,19 +8,18 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#creator
     /// </remarks>
-    [JsonObject]
     public class Software : ArchiveObject
     {
         /// <summary>
         /// Name of the application/browser used to export the log. 
         /// </summary>
-        [JsonProperty(PropertyName = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
         /// <summary>
         /// Version of the application/browser used to export the log. 
         /// </summary>
-        [JsonProperty(PropertyName = "version")]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     }
 }

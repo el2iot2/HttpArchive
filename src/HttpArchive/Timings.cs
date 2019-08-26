@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace HttpArchive
 {
@@ -12,7 +8,6 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#timings
     /// </remarks>
-    [JsonObject]
     public class Timings : ArchiveObject
     {
         /// <summary>
@@ -21,7 +16,7 @@ namespace HttpArchive
         /// <remarks>
         /// Use -1 if the timing does not apply to the current request. 
         /// </remarks>
-        [JsonProperty(PropertyName = "blocked")]
+        [JsonPropertyName("blocked")]
         public int Blocked { get; set; }
 
         /// <summary>
@@ -30,7 +25,7 @@ namespace HttpArchive
         /// <remarks>
         /// Use -1 if the timing does not apply to the current request. 
         /// </remarks>
-        [JsonProperty(PropertyName = "dns")]
+        [JsonPropertyName("dns")]
         public int Dns { get; set; }
 
         /// <summary>
@@ -39,19 +34,19 @@ namespace HttpArchive
         /// <remarks>
         /// Use -1 if the timing does not apply to the current request. 
         /// </remarks>
-        [JsonProperty(PropertyName = "connect")]
+        [JsonPropertyName("connect")]
         public int Connect { get; set; }
 
         /// <summary>
         /// Time required to send HTTP request to the server.
         /// </summary>
-        [JsonProperty(PropertyName = "send")]
+        [JsonPropertyName("send")]
         public int Send { get; set; }
 
         /// <summary>
         /// Time required to read entire response from the server (or cache). 
         /// </summary>
-        [JsonProperty(PropertyName = "receive")]
+        [JsonPropertyName("receive")]
         public int Receive { get; set; }
 
         /// <summary>
@@ -61,7 +56,7 @@ namespace HttpArchive
         /// If this field is defined then the time is also included in the connect field (to ensure backward compatibility with HAR 1.1). 
         /// Use -1 if the timing does not apply to the current request.  
         /// </remarks>
-        [JsonProperty(PropertyName = "ssl")]
+        [JsonPropertyName("ssl")]
         public int Ssl { get; set; }
     }
 }

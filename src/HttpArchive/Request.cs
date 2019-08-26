@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace HttpArchive
 {
@@ -12,49 +9,48 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#request
     /// </remarks>
-    [JsonObject]
     public class Request
     {
         /// <summary>
         /// Request method (GET, POST, ...). 
         /// </summary>
-        [JsonProperty(PropertyName = "method")]
+        [JsonPropertyName("method")]
         public string Method { get; set; }
 
         /// <summary>
         /// Absolute URL of the request (fragments are not included).
         /// </summary>
-        [JsonProperty(PropertyName = "url")]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
 
         /// <summary>
         /// Request HTTP Version. 
         /// </summary>
-        [JsonProperty(PropertyName = "httpVersion")]
+        [JsonPropertyName("httpVersion")]
         public string HttpVersion { get; set; }
 
         /// <summary>
         /// List of cookie objects.
         /// </summary>
-        [JsonProperty(PropertyName = "cookies")]
+        [JsonPropertyName("cookies")]
         public IList<Cookie> Cookies { get; set; }
 
         /// <summary>
         /// List of header objects. 
         /// </summary>
-        [JsonProperty(PropertyName = "headers")]
+        [JsonPropertyName("headers")]
         public IList<NamedValue> Headers { get; set; }
 
         /// <summary>
         /// List of query parameter objects. 
         /// </summary>
-        [JsonProperty(PropertyName = "queryString")]
+        [JsonPropertyName("queryString")]
         public IList<NamedValue> QueryString { get; set; }
 
         /// <summary>
         /// Posted data info.  
         /// </summary>
-        [JsonProperty(PropertyName = "postData")]
+        [JsonPropertyName("postData")]
         public PostData PostData { get; set; }
 
         /// <summary>
@@ -63,7 +59,7 @@ namespace HttpArchive
         /// <remarks>
         /// Set to -1 if the info is not available. 
         /// </remarks>
-        [JsonProperty(PropertyName = "headersSize")]
+        [JsonPropertyName("headersSize")]
         public int HeadersSize { get; set; }
 
         /// <summary>
@@ -72,7 +68,7 @@ namespace HttpArchive
         /// <remarks>
         /// Set to -1 if the info is not available. 
         /// </remarks>
-        [JsonProperty(PropertyName = "bodySize")]
+        [JsonPropertyName("bodySize")]
         public int BodySize { get; set; }
 
         

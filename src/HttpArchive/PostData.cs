@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace HttpArchive
 {
@@ -12,25 +9,24 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#postData
     /// </remarks>
-    [JsonObject]
     public class PostData : ArchiveObject
     {
         /// <summary>
         /// Mime type of posted data. 
         /// </summary>
-        [JsonProperty(PropertyName = "mimeType")]
+        [JsonPropertyName("mimeType")]
         public string MimeType { get; set; }
 
         /// <summary>
         /// List of posted parameters (in case of URL encoded parameters). 
         /// </summary>
-        [JsonProperty(PropertyName = "params")]
+        [JsonPropertyName("params")]
         public IList<PostDataParam> Params { get; set; }
 
         /// <summary>
         /// Plain text posted data.  
         /// </summary>
-        [JsonProperty(PropertyName = "text")]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     }
 }
