@@ -3,29 +3,29 @@
 namespace HttpArchive
 {
     /// <summary>
-    /// Details of the browser <see cref="ISoftware"/>
+    /// Details of the browser software
     /// </summary>
     /// <remarks>
-    /// http://www.softwareishard.com/blog/har-12-spec/#creator
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#browser
     /// </remarks>
     public class Browser : ISoftware
     {
         /// <summary>
-        /// Name of the application/browser used to export the log. 
+        /// Name of the browser used to export the log. 
         /// </summary>
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         /// <summary>
-        /// Version of the application/browser used to export the log. 
+        /// Version of the browser used to export the log. 
         /// </summary>
         [JsonPropertyName("version")]
-        public string Version { get; set; }
+        public string Version { get; set; } = "";
 
         /// <summary>
         /// (new in 1.2) - A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
-        public string Comment { get; set; }
+        public string? Comment { get; set; }
     }
 }

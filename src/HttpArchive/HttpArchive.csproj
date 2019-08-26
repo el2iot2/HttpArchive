@@ -17,7 +17,9 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl> 
     <MinClientVersion>4.3.0</MinClientVersion>
     <IncludeSymbols>true</IncludeSymbols>
-    <NullableContextOptions>Enable</NullableContextOptions>
+    <NullableContextOptions>enable</NullableContextOptions>
+    <Nullable>enable</Nullable>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

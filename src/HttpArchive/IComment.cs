@@ -10,6 +10,6 @@ namespace HttpArchive
         /// <summary>
         /// (new in 1.2) - A comment provided by the user or the application.
         /// </summary>
-        string Comment { get; set; }
+        string? Comment { get; set; }
     }
 }

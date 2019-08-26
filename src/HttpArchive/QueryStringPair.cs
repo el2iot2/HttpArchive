@@ -26,6 +26,6 @@ namespace HttpArchive
         /// (new in 1.2) - A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
-        public string Comment { get; set; }
+        public string? Comment { get; set; }
     }
 }
