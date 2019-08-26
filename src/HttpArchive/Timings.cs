@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#timings
     /// </remarks>
-    public class Timings : ArchiveObject
+    public class Timings : IComment
     {
         /// <summary>
         /// Time spent in a queue waiting for a network connection.
@@ -58,5 +58,11 @@ namespace HttpArchive
         /// </remarks>
         [JsonPropertyName("ssl")]
         public int Ssl { get; set; }
+
+        /// <summary>
+        /// (new in 1.2) - A comment provided by the user or the application.
+        /// </summary>
+        [JsonPropertyName("comment")]
+        public string Comment { get; set; }
     }
 }

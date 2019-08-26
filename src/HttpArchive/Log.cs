@@ -9,7 +9,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#log
     /// </remarks>
-    public class Log : ArchiveObject
+    public class Log : IComment
     {
         /// <summary>
         /// Version number of the format. If empty, string "1.1" is assumed by default.
@@ -21,13 +21,13 @@ namespace HttpArchive
         /// Name and version info of the log creator application.
         /// </summary>
         [JsonPropertyName("creator")]
-        public Software Creator { get; set; }
+        public Creator Creator { get; set; }
 
         /// <summary>
         /// Name and version info of used browser.
         /// </summary>
         [JsonPropertyName("browser")]
-        public Software Browser { get; set; }
+        public Browser Browser { get; set; }
 
         /// <summary>
         /// List of all exported (tracked) pages. Leave out this field if the application does not support grouping by pages.
@@ -39,7 +39,12 @@ namespace HttpArchive
         /// List of all exported (tracked) requests.
         /// </summary>
         [JsonPropertyName("entries")]
-        public IList<Entry> Entries { get; set; }
+        public IList<Entry> Entries { get; set; }    
 
+        /// <summary>
+        /// (new in 1.2) - A comment provided by the user or the application.
+        /// </summary>
+        [JsonPropertyName("comment")]
+        public string Comment { get; set; }
     }
 }

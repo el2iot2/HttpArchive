@@ -9,7 +9,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#response
     /// </remarks>
-    public class Response : ArchiveObject
+    public class Response : IComment
     {
         /// <summary>
         /// Response status. 
@@ -39,7 +39,7 @@ namespace HttpArchive
         /// List of header objects. 
         /// </summary>
         [JsonPropertyName("headers")]
-        public IList<NamedValue> Headers { get; set; }
+        public IList<Header> Headers { get; set; }
 
         /// <summary>
         /// Details about the response body.  
@@ -75,5 +75,10 @@ namespace HttpArchive
         /// </remarks>
         [JsonPropertyName("bodySize")]
         public int BodySize { get; set; }
+        /// <summary>
+        /// (new in 1.2) - A comment provided by the user or the application.
+        /// </summary>
+        [JsonPropertyName("comment")]
+        public string Comment { get; set; }
     }
 }

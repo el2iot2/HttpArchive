@@ -10,7 +10,7 @@ namespace HttpArchive
     /// Depending on the browser, onContentLoad property represents 
     /// DOMContentLoad event or document.readyState == interactive.
     /// </remarks>
-    public class Entry : ArchiveObject
+    public class Entry : IComment
     {
         /// <summary>
         /// Reference to the parent page. 
@@ -70,5 +70,11 @@ namespace HttpArchive
         /// </remarks>
         [JsonPropertyName("connection")]
         public string Connection { get; set; }
+
+        /// <summary>
+        /// (new in 1.2) - A comment provided by the user or the application.
+        /// </summary>
+        [JsonPropertyName("comment")]
+        public string Comment { get; set; }
     }
 }

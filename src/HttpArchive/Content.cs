@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#content
     /// </remarks>
-    public class Content : ArchiveObject
+    public class Content : IComment
     {
         /// <summary>
         /// Length of the returned content in bytes.
@@ -48,5 +48,11 @@ namespace HttpArchive
         /// </remarks>
         [JsonPropertyName("encoding")]
         public string Encoding { get; set; }
+
+        /// <summary>
+        /// (new in 1.2) - A comment provided by the user or the application.
+        /// </summary>
+        [JsonPropertyName("comment")]
+        public string Comment { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#cookies
     /// </remarks>
-    public class Cookie : NamedValue
+    public class Cookie : INamedValue
     {
         /// <summary>
         /// The path pertaining to the cookie.
@@ -39,5 +39,23 @@ namespace HttpArchive
         /// </summary>
         [JsonPropertyName("secure")]
         public bool Secure { get; set; }
+        
+        /// <summary>
+        /// The name. 
+        /// </summary>
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The value.
+        /// </summary>
+        [JsonPropertyName("value")]
+        public string Value { get; set; }
+
+        /// <summary>
+        /// (new in 1.2) - A comment provided by the user or the application.
+        /// </summary>
+        [JsonPropertyName("comment")]
+        public string Comment { get; set; }
     }
 }

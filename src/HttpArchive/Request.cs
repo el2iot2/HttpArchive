@@ -9,7 +9,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#request
     /// </remarks>
-    public class Request
+    public class Request : IComment
     {
         /// <summary>
         /// Request method (GET, POST, ...). 
@@ -39,13 +39,13 @@ namespace HttpArchive
         /// List of header objects. 
         /// </summary>
         [JsonPropertyName("headers")]
-        public IList<NamedValue> Headers { get; set; }
+        public IList<Header> Headers { get; set; }
 
         /// <summary>
         /// List of query parameter objects. 
         /// </summary>
         [JsonPropertyName("queryString")]
-        public IList<NamedValue> QueryString { get; set; }
+        public IList<QueryStringPair> QueryString { get; set; }
 
         /// <summary>
         /// Posted data info.  
@@ -71,6 +71,10 @@ namespace HttpArchive
         [JsonPropertyName("bodySize")]
         public int BodySize { get; set; }
 
-        
+        /// <summary>
+        /// (new in 1.2) - A comment provided by the user or the application.
+        /// </summary>
+        [JsonPropertyName("comment")]
+        public string Comment { get; set; }
     }
 }

@@ -3,14 +3,13 @@
 namespace HttpArchive
 {
     /// <summary>
-    /// This object is the base type for objects that support comments
+    /// Represents an object that support a comment
     /// </summary>
-    public class ArchiveObject
+    public interface IComment
     {
         /// <summary>
         /// (new in 1.2) - A comment provided by the user or the application.
         /// </summary>
-        [JsonPropertyName("comment")]
-        public string Comment { get; set; }
+        string Comment { get; set; }
     }
 }
