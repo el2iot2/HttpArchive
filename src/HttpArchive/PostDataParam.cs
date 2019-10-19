@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#params
     /// </remarks>
-    public class PostDataParam : INamedValue
+    public class PostDataParam : IRequiresNameValue
     {
         /// <summary>
         /// Name of a posted file.
@@ -25,7 +25,7 @@ namespace HttpArchive
         public string Value { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

@@ -9,7 +9,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#response
     /// </remarks>
-    public class Response : IComment
+    public class Response : IAllowsComment
     {
         /// <summary>
         /// Response status. 
@@ -76,7 +76,7 @@ namespace HttpArchive
         [JsonPropertyName("bodySize")]
         public int BodySize { get; set; }
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

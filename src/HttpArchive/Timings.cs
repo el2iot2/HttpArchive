@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#timings
     /// </remarks>
-    public class Timings : IComment
+    public class Timings : IAllowsComment
     {
         /// <summary>
         /// Time spent in a queue waiting for a network connection.
@@ -50,7 +50,7 @@ namespace HttpArchive
         public int Receive { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - Time required for SSL/TLS negotiation.
+        /// Time required for SSL/TLS negotiation.
         /// </summary>
         /// <remarks>
         /// If this field is defined then the time is also included in the connect field (to ensure backward compatibility with HAR 1.1). 
@@ -60,7 +60,7 @@ namespace HttpArchive
         public int Ssl { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

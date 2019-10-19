@@ -9,7 +9,7 @@ namespace HttpArchive
     /// <remarks>
     /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#cookies
     /// </remarks>
-    public class Cookie : INamedValue
+    public class Cookie : IRequiresNameValue
     {
         /// <summary>
         /// The name of the cookie. 
@@ -48,14 +48,14 @@ namespace HttpArchive
         public bool HttpOnly { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - True if the cookie was transmitted over ssl, false otherwise.   
+        /// True if the cookie was transmitted over ssl, false otherwise.   
         /// </summary>
         [JsonPropertyName("secure")]
         public bool Secure { get; set; }
         
         
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

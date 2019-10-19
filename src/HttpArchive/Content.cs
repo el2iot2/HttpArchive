@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#content
     /// </remarks>
-    public class Content : IComment
+    public class Content : IAllowsComment
     {
         /// <summary>
         /// Length of the returned content in bytes.
@@ -41,7 +41,7 @@ namespace HttpArchive
         public string? Text { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - Encoding used for response text field e.g "base64".
+        /// Encoding used for response text field e.g "base64".
         /// </summary>
         /// <remarks>
         /// Leave out this field if the text field is HTTP decoded (decompressed & unchunked), than trans-coded from its original character set into UTF-8. 
@@ -50,7 +50,7 @@ namespace HttpArchive
         public string? Encoding { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

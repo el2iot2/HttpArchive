@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#pages
     /// </remarks>
-    public class Page : IComment
+    public class Page : IAllowsComment
     {
         /// <summary>
         /// Date and time stamp for the beginning of the page load (ISO 8601 - YYYY-MM-DDThh:mm:ss.sTZD, e.g. 2009-07-24T19:20:30.45+01:00). 
@@ -35,7 +35,7 @@ namespace HttpArchive
         public PageTimings PageTimings { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

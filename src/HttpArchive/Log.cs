@@ -9,7 +9,7 @@ namespace HttpArchive
     /// <remarks>
     /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#log
     /// </remarks>
-    public class Log : IComment
+    public class Log : IAllowsComment
     {
         /// <summary>
         /// Version number of the format.
@@ -18,7 +18,7 @@ namespace HttpArchive
         /// If empty, string "1.1" is assumed by default.
         /// </remarks>
         [JsonPropertyName("version")]
-        public string Version { get; set; } = "1.2";
+        public string Version { get; set; } = "1.3";
 
         /// <summary>
         /// Name and version info of the log creator application.
@@ -36,7 +36,7 @@ namespace HttpArchive
         /// List of all exported (tracked) pages. Leave out this field if the application does not support grouping by pages.
         /// </summary>
         [JsonPropertyName("pages")]
-        public IList<Page> Pages { get; set; } = new List<Page>();
+        public IList<Page>? Pages { get; set; }
 
         /// <summary>
         /// List of all exported (tracked) requests.
@@ -45,7 +45,7 @@ namespace HttpArchive
         public IList<Entry> Entries { get; set; } = new List<Entry>();
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

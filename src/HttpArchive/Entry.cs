@@ -10,7 +10,7 @@ namespace HttpArchive
     /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#entries
     /// Depending on the browser, onContentLoad property represents 
     /// </remarks>
-    public class Entry : IComment
+    public class Entry : IAllowsComment
     {
         /// <summary>
         /// Reference to the parent page. 
@@ -62,13 +62,13 @@ namespace HttpArchive
         public Timings Timings { get; set; } = new Timings();
 
         /// <summary>
-        /// (new in 1.2) - IP address of the server that was connected (result of DNS resolution). 
+        /// IP address of the server that was connected (result of DNS resolution). 
         /// </summary>
         [JsonPropertyName("serverIPAddress")]
         public string? ServerIPAddress { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - Unique ID of the parent TCP/IP connection
+        /// Unique ID of the parent TCP/IP connection
         /// </summary>
         /// <remarks>
         /// Can be the client or server port number. 
@@ -82,7 +82,7 @@ namespace HttpArchive
         public string? Connection { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

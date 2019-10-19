@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#headers
     /// </remarks>
-    public class Header : INamedValue
+    public class Header : IRequiresNameValue
     {
         /// <summary>
         /// The name. 
@@ -23,7 +23,7 @@ namespace HttpArchive
         public string Value { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

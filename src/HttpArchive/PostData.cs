@@ -9,7 +9,7 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#postData
     /// </remarks>
-    public class PostData : IComment
+    public class PostData : IAllowsComment
     {
         /// <summary>
         /// Mime type of posted data. 
@@ -30,7 +30,7 @@ namespace HttpArchive
         public string Text { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

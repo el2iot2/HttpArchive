@@ -10,7 +10,7 @@ namespace HttpArchive
     /// All times are specified in milliseconds. If a time info is not available appropriate field is set to -1.
     /// Depending on the browser, onContentLoad property represents DOMContentLoad event or document.readyState == interactive.
     /// </remarks>
-    public class PageTimings : IComment
+    public class PageTimings : IAllowsComment
     {
         /// <summary>
         /// Content of the page loaded. Number of milliseconds since page load started (page.startedDateTime). Use -1 if the timing does not apply to the current request. 
@@ -25,7 +25,7 @@ namespace HttpArchive
         public int OnLoad { get; set; }
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

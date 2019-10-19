@@ -8,7 +8,7 @@ namespace HttpArchive
     /// <remarks>
     /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#cache
     /// </remarks>
-    public class Cache : IComment
+    public class Cache : IAllowsComment
     {
         /// <summary>
         /// State of a cache entry before the request. 
@@ -29,7 +29,7 @@ namespace HttpArchive
         public CacheEntryState? AfterRequest {get; set;}
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

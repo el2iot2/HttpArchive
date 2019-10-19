@@ -23,7 +23,7 @@ namespace HttpArchive
         public string Version { get; set; } = "";
 
         /// <summary>
-        /// (new in 1.2) - A comment provided by the user or the application.
+        /// A comment provided by the user or the application.
         /// </summary>
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }

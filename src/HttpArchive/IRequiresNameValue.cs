@@ -12,18 +12,11 @@ namespace HttpArchive
     /// http://www.softwareishard.com/blog/har-12-spec/#queryString
     /// http://www.softwareishard.com/blog/har-12-spec/#params
     /// </remarks>
-    public interface INamedValue
+    public interface IRequiresNameValue : IRequiresName
     {
-        /// <summary>
-        /// The name. 
-        /// </summary>
-        [JsonPropertyName("name")]
-        string Name { get; set; }
-
         /// <summary>
         /// The value.
         /// </summary>
-        [JsonPropertyName("value")]
         string Value { get; set; }
     }
 }

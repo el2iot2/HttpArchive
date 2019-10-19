@@ -8,13 +8,8 @@ namespace HttpArchive
     /// <remarks>
     /// http://www.softwareishard.com/blog/har-12-spec/#creator
     /// </remarks>
-    public interface ISoftware : IComment
+    public interface ISoftware : IRequiresName, IAllowsComment
     {
-        /// <summary>
-        /// Name of the software. 
-        /// </summary>
-        string Name { get; set; }
-
         /// <summary>
         /// Version of the software. 
         /// </summary>
