@@ -10,6 +10,18 @@ namespace HttpArchive
     /// </remarks>
     public class Header : IRequiresNameValue
     {
+        public Header()
+        {
+            Name = "";
+            Value = "";
+        }
+        
+        public Header(string name, string value)
+        {
+            Name = name;
+            Value = value;
+        }
+
         /// <summary>
         /// The name. 
         /// </summary>
