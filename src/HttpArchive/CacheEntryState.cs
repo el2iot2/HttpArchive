@@ -7,7 +7,7 @@ namespace HttpArchive
     /// Both beforeRequest and afterRequest object share the following structure.
     /// </summary>
     /// <remarks>
-    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#beforerequest--afterrequest
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#beforerequest--afterrequest
     /// </remarks>
     public class CacheEntryState : IAllowsComment
     {
@@ -27,7 +27,7 @@ namespace HttpArchive
         /// Etag 
         /// </summary>
         [JsonPropertyName("eTag")]
-        string Etag { get; set; } = "";
+        string Etag { get; set; }
 
         /// <summary>
         /// The number of times the cache entry has been opened.

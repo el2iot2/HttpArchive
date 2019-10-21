@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace HttpArchive
@@ -7,10 +8,25 @@ namespace HttpArchive
     /// This object contains detailed info about the performed request.
     /// </summary>
     /// <remarks>
-    /// http://www.softwareishard.com/blog/har-12-spec/#request
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#creator
+    /// The total request size sent can be computed as follows (if both values are available):
+    /// let totalSize = entry.request.headersSize + entry.request.bodySize
     /// </remarks>
-    public class Request : IAllowsComment
+    public class Request : Message
     {
+        public Request() : this("", "", "", null, null, null, -1, -1)
+        {
+        }
+        public Request(string method, string url, string httpVersion, IEnumerable<Cookie>? cookies, IEnumerable<Header>? headers, IEnumerable<QueryStringPair>? queryString, int headersSize, int bodySize) :
+            base(httpVersion: httpVersion, cookies: cookies, headers: headers, headersSize: headersSize, bodySize: bodySize)
+        {
+            Method = method;
+            Url = url;
+            QueryString = (queryString ?? Enumerable.Empty<QueryStringPair>()).ToList();
+            HeadersSize = headersSize;
+            BodySize = bodySize;
+        }
+
         /// <summary>
         /// Request method (GET, POST, ...). 
         /// </summary>
@@ -24,24 +40,6 @@ namespace HttpArchive
         public string Url { get; set; }
 
         /// <summary>
-        /// Request HTTP Version. 
-        /// </summary>
-        [JsonPropertyName("httpVersion")]
-        public string HttpVersion { get; set; }
-
-        /// <summary>
-        /// List of cookie objects.
-        /// </summary>
-        [JsonPropertyName("cookies")]
-        public IList<Cookie> Cookies { get; set; }
-
-        /// <summary>
-        /// List of header objects. 
-        /// </summary>
-        [JsonPropertyName("headers")]
-        public IList<Header> Headers { get; set; }
-
-        /// <summary>
         /// List of query parameter objects. 
         /// </summary>
         [JsonPropertyName("queryString")]
@@ -51,30 +49,6 @@ namespace HttpArchive
         /// Posted data info.  
         /// </summary>
         [JsonPropertyName("postData")]
-        public PostData PostData { get; set; }
-
-        /// <summary>
-        /// Total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body.
-        /// </summary>
-        /// <remarks>
-        /// Set to -1 if the info is not available. 
-        /// </remarks>
-        [JsonPropertyName("headersSize")]
-        public int HeadersSize { get; set; }
-
-        /// <summary>
-        /// Size of the request body (POST data payload) in bytes.
-        /// </summary>
-        /// <remarks>
-        /// Set to -1 if the info is not available. 
-        /// </remarks>
-        [JsonPropertyName("bodySize")]
-        public int BodySize { get; set; }
-
-        /// <summary>
-        /// A comment provided by the user or the application.
-        /// </summary>
-        [JsonPropertyName("comment")]
-        public string? Comment { get; set; }
+        public PostData? PostData { get; set; }
     }
 }

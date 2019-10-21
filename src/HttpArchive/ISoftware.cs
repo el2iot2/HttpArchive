@@ -6,7 +6,7 @@ namespace HttpArchive
     /// Creator and browser objects share the same structure.
     /// </summary>
     /// <remarks>
-    /// http://www.softwareishard.com/blog/har-12-spec/#creator
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#creator
     /// </remarks>
     public interface ISoftware : IRequiresName, IAllowsComment
     {

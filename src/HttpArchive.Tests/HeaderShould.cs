@@ -10,28 +10,13 @@ namespace HttpArchive
     public class HeaderShould
     {
         [Fact]
-        public void DeserializeMinimal()
+        public void RoundtripDefault()
         {
-            var json = 
-@"{
-    ""name"": ""name"",
-    ""value"": ""value""
-}";
-            var deserialized = JsonSerializer.Deserialize<Header>(json);
-            deserialized.Comment.Should().BeNull();
-            deserialized.Name.Should().Be("name");
-            deserialized.Value.Should().Be("value");
-        }
-
-        [Fact]
-        public void RoundtripMinimal()
-        {
-            var value = new Header("name", "value");
             var deserialized = JsonSerializer.Deserialize<Header>(
-                JsonSerializer.Serialize(value));
+                JsonSerializer.Serialize(new Header()));
             deserialized.Comment.Should().BeNull();
-            deserialized.Name.Should().Be("name");
-            deserialized.Value.Should().Be("value");
+            deserialized.Name.Should().Be("");
+            deserialized.Value.Should().Be("");
         }
     }
 }

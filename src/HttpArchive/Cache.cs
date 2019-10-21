@@ -6,7 +6,7 @@ namespace HttpArchive
     /// This objects contains info about a request coming from browser cache.
     /// </summary>
     /// <remarks>
-    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#cache
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#cache
     /// </remarks>
     public class Cache : IAllowsComment
     {

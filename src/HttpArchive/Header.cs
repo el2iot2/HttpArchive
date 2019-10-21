@@ -10,10 +10,8 @@ namespace HttpArchive
     /// </remarks>
     public class Header : IRequiresNameValue
     {
-        public Header()
+        public Header() : this ("", "")
         {
-            Name = "";
-            Value = "";
         }
         
         public Header(string name, string value)

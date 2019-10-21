@@ -7,7 +7,7 @@ namespace HttpArchive
     /// This object is an entry in the list of all cookies (used in request and response objects).
     /// </summary>
     /// <remarks>
-    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#cookies
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#cookies
     /// </remarks>
     public class Cookie : IRequiresNameValue
     {
@@ -15,13 +15,13 @@ namespace HttpArchive
         /// The name of the cookie. 
         /// </summary>
         [JsonPropertyName("name")]
-        public string Name { get; set; } = "";
+        public string Name { get; set; }
 
         /// <summary>
         /// The cookie value.
         /// </summary>
         [JsonPropertyName("value")]
-        public string Value { get; set; } = "";
+        public string Value { get; set; }
 
         /// <summary>
         /// The path pertaining to the cookie.

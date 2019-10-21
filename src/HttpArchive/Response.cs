@@ -7,10 +7,24 @@ namespace HttpArchive
     /// This object contains detailed info about the response.
     /// </summary>
     /// <remarks>
-    /// http://www.softwareishard.com/blog/har-12-spec/#response
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#response
     /// </remarks>
-    public class Response : IAllowsComment
+    public class Response : Message
     {
+        public Response() :
+        this(0, "", "", null, null, new Content(), "", -1, -1)
+        {
+        }
+        public Response(int status, string statusText, string httpVersion, IEnumerable<Cookie>? cookies, IEnumerable<Header>? headers, Content content, string redirectUrl, int headersSize, int bodySize)
+        : base(httpVersion: httpVersion, cookies: cookies, headers: headers, headersSize: headersSize, bodySize: bodySize)
+        {
+            Status = status;
+            StatusText = statusText;
+            HttpVersion = httpVersion;
+            Content = content;
+            RedirectUrl = redirectUrl;
+        }
+
         /// <summary>
         /// Response status. 
         /// </summary>
@@ -24,24 +38,6 @@ namespace HttpArchive
         public string StatusText { get; set; }
 
         /// <summary>
-        /// Response HTTP Version. 
-        /// </summary>
-        [JsonPropertyName("httpVersion")]
-        public string HttpVersion { get; set; }
-
-        /// <summary>
-        /// List of cookie objects.
-        /// </summary>
-        [JsonPropertyName("cookies")]
-        public IList<Cookie> Cookies { get; set; }
-
-        /// <summary>
-        /// List of header objects. 
-        /// </summary>
-        [JsonPropertyName("headers")]
-        public IList<Header> Headers { get; set; }
-
-        /// <summary>
         /// Details about the response body.  
         /// </summary>
         [JsonPropertyName("content")]
@@ -52,33 +48,5 @@ namespace HttpArchive
         /// </summary>
         [JsonPropertyName("redirectURL")]
         public string RedirectUrl { get; set; }
-
-        /// <summary>
-        /// Total number of bytes from the start of the HTTP request message until (and including) the double CRLF before the body.
-        /// </summary>
-        /// <remarks>
-        /// Set to -1 if the info is not available. 
-        /// The size of received response-headers is computed only from headers that are really received from the server. 
-        /// Additional headers appended by the browser are not included in this number, but they appear in the list of header objects.
-        /// The total response size received can be computed as follows (if both values are available):
-        /// var totalSize = entry.response.headersSize + entry.response.bodySize;
-        /// </remarks>
-        [JsonPropertyName("headersSize")]
-        public int HeadersSize { get; set; }
-
-        /// <summary>
-        /// Size of the received response body in bytes.
-        /// </summary>
-        /// <remarks>
-        /// Set to zero in case of responses coming from the cache (304). 
-        /// Set to -1 if the info is not available. 
-        /// </remarks>
-        [JsonPropertyName("bodySize")]
-        public int BodySize { get; set; }
-        /// <summary>
-        /// A comment provided by the user or the application.
-        /// </summary>
-        [JsonPropertyName("comment")]
-        public string? Comment { get; set; }
     }
 }

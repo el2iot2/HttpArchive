@@ -6,7 +6,7 @@ namespace HttpArchive
     /// This object describes details about response content (embedded in response object).
     /// </summary>
     /// <remarks>
-    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.2.md#content
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#content
     /// </remarks>
     public class Content : IAllowsComment
     {
@@ -29,7 +29,7 @@ namespace HttpArchive
         /// MIME type of the response text (value of the Content-Type response header). The charset attribute of the MIME type is included (if available)
         /// </summary>
         [JsonPropertyName("mimeType")]
-        public string MimeType { get; set; } = "";
+        public string MimeType { get; set; }
 
         /// <summary>
         /// Response body sent from the server or loaded from the browser cache.
