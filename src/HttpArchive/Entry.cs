@@ -11,6 +11,10 @@ namespace HttpArchive
     /// </remarks>
     public class Entry : IAllowsComment
     {
+        /// <summary>
+        /// Constructs a default/empty entry
+        /// </summary>
+        /// <returns></returns>
         public Entry() : this(
             DateTimeOffset.MinValue,
             0,
@@ -22,6 +26,15 @@ namespace HttpArchive
         {
         }
 
+        /// <summary>
+        /// Constructs the minimally required entry
+        /// </summary>
+        /// <param name="startedDateTime"></param>
+        /// <param name="time"></param>
+        /// <param name="request"></param>
+        /// <param name="response"></param>
+        /// <param name="cache"></param>
+        /// <param name="timings"></param>
         public Entry(DateTimeOffset startedDateTime, int time, Request request, Response response, Cache cache, Timings timings)
         {
             StartedDateTime = startedDateTime;

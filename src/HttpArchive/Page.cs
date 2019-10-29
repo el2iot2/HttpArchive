@@ -11,10 +11,25 @@ namespace HttpArchive
     /// </remarks>
     public class Page : IAllowsComment
     {
-        public Page() : this(startedDateTime: DateTimeOffset.MinValue, id:"", title: "", pageTimings: new PageTimings())
+        /// <summary>
+        /// Constructs a page with all empty/minimal defaults
+        /// </summary>
+        /// <returns></returns>
+        public Page() : this(
+            startedDateTime: DateTimeOffset.MinValue, 
+            id: "", 
+            title: "", 
+            pageTimings: new PageTimings())
         {
         }
 
+        /// <summary>
+        /// Constructs the minimal required page
+        /// </summary>
+        /// <param name="startedDateTime"></param>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="pageTimings"></param>
         public Page(DateTimeOffset startedDateTime, string id, string title, PageTimings pageTimings)
         {
             StartedDateTime = startedDateTime;

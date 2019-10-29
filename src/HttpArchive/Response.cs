@@ -11,10 +11,26 @@ namespace HttpArchive
     /// </remarks>
     public class Response : Message
     {
-        public Response() :
-        this(0, "", "", null, null, new Content(), "", -1, -1)
+        /// <summary>
+        /// Create new default/empty response
+        /// </summary>
+        /// <returns></returns>
+        public Response() : this(0, "", "", null, null, new Content(), "", -1, -1)
         {
         }
+
+        /// <summary>
+        /// Create new Response with required properties
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="statusText"></param>
+        /// <param name="httpVersion"></param>
+        /// <param name="cookies"></param>
+        /// <param name="headers"></param>
+        /// <param name="content"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="headersSize"></param>
+        /// <param name="bodySize"></param>
         public Response(int status, string statusText, string httpVersion, IEnumerable<Cookie>? cookies, IEnumerable<Header>? headers, Content content, string redirectUrl, int headersSize, int bodySize)
         : base(httpVersion: httpVersion, cookies: cookies, headers: headers, headersSize: headersSize, bodySize: bodySize)
         {

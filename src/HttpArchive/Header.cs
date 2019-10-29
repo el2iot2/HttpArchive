@@ -6,14 +6,23 @@ namespace HttpArchive
     /// This object is an entry in the list of all headers (used in request and response objects).
     /// </summary>
     /// <remarks>
-    /// http://www.softwareishard.com/blog/har-12-spec/#headers
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#headers
     /// </remarks>
     public class Header : IRequiresNameValue
     {
-        public Header() : this ("", "")
+        /// <summary>
+        /// Constructs a default/empty header
+        /// </summary>
+        /// <returns></returns>
+        public Header() : this("", "")
         {
         }
-        
+
+        /// <summary>
+        /// Constructs a header with all required values
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
         public Header(string name, string value)
         {
             Name = name;

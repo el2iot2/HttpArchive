@@ -8,7 +8,7 @@ namespace HttpArchive
     /// This object contains detailed info about the performed request.
     /// </summary>
     /// <remarks>
-    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#creator
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#request
     /// The total request size sent can be computed as follows (if both values are available):
     /// let totalSize = entry.request.headersSize + entry.request.bodySize
     /// </remarks>

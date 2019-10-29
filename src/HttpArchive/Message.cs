@@ -14,7 +14,7 @@ namespace HttpArchive
     /// </remarks>
     public abstract class Message : IAllowsComment
     {
-        public Message(string httpVersion, IEnumerable<Cookie>? cookies, IEnumerable<Header>? headers, int headersSize, int bodySize)
+        internal Message(string httpVersion, IEnumerable<Cookie>? cookies, IEnumerable<Header>? headers, int headersSize, int bodySize)
         {
             HttpVersion = httpVersion;
             Cookies = (cookies ?? Enumerable.Empty<Cookie>()).ToList();

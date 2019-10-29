@@ -11,6 +11,17 @@ namespace HttpArchive
     /// </remarks>
     public class Cookie : IRequiresNameValue
     {
+        public Cookie() : this("", "")
+        {
+
+        }
+
+        public Cookie(string name, string value)
+        {
+            Name = name;
+            Value = value;
+        }
+
         /// <summary>
         /// The name of the cookie. 
         /// </summary>
@@ -45,15 +56,15 @@ namespace HttpArchive
         /// Set to true if the cookie is HTTP only, false otherwise.  
         /// </summary>
         [JsonPropertyName("httpOnly")]
-        public bool HttpOnly { get; set; }
+        public bool? HttpOnly { get; set; }
 
         /// <summary>
         /// True if the cookie was transmitted over ssl, false otherwise.   
         /// </summary>
         [JsonPropertyName("secure")]
-        public bool Secure { get; set; }
-        
-        
+        public bool? Secure { get; set; }
+
+
         /// <summary>
         /// A comment provided by the user or the application.
         /// </summary>

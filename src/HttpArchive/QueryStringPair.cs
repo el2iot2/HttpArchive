@@ -3,13 +3,23 @@
 namespace HttpArchive
 {
     /// <summary>
-    /// This object is parameter/value pair in query string (used in request and response objects).
+    /// This object is parameter/value pair in query string (used in request).
     /// </summary>
     /// <remarks>
-    /// http://www.softwareishard.com/blog/har-12-spec/#queryString
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#querystring
     /// </remarks>
     public class QueryStringPair : IRequiresNameValue
     {
+        public QueryStringPair(): this ("","")
+        {
+            
+        }
+
+        public QueryStringPair(string name, string value)
+        {   
+            Name = name;
+            Value = value;
+        }
         /// <summary>
         /// The name. 
         /// </summary>

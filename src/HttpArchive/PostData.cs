@@ -7,10 +7,14 @@ namespace HttpArchive
     /// This object describes posted data, if any (embedded in request object).
     /// </summary>
     /// <remarks>
-    /// http://www.softwareishard.com/blog/har-12-spec/#postData
+    /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#postdata
     /// </remarks>
-    public class PostData : IAllowsComment
+    public abstract class PostData : IAllowsComment
     {
+        internal PostData(string mimeType)
+        {
+            MimeType = mimeType;
+        }
         /// <summary>
         /// Mime type of posted data. 
         /// </summary>
@@ -18,17 +22,11 @@ namespace HttpArchive
         public string MimeType { get; set; }
 
         /// <summary>
-        /// List of posted parameters (in case of URL encoded parameters). 
+        /// Encoding used for request text field e.g "base64".
         /// </summary>
-        [JsonPropertyName("params")]
-        public IList<PostDataParam> Params { get; set; }
-
-        /// <summary>
-        /// Plain text posted data.  
-        /// </summary>
-        [JsonPropertyName("text")]
-        public string Text { get; set; }
-
+        [JsonPropertyName("encoding")]
+        public string? Encoding { get; set; }
+        
         /// <summary>
         /// A comment provided by the user or the application.
         /// </summary>

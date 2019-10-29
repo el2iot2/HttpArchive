@@ -11,7 +11,7 @@ namespace HttpArchive
     public class Browser : ISoftware
     {
         /// <summary>
-        /// Internal default constructor for serialization
+        /// Constructs a default/minimal browser software
         /// </summary>
         /// <returns></returns>
         public Browser() : this("", "")
@@ -19,7 +19,7 @@ namespace HttpArchive
         }
 
         /// <summary>
-        /// Construct the browser with the required info
+        /// Construct the browser with all required info
         /// </summary>
         /// <param name="name"></param>
         /// <param name="version"></param>
