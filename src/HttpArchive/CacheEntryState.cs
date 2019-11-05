@@ -11,6 +11,29 @@ namespace HttpArchive
     /// </remarks>
     public class CacheEntryState : IAllowsComment
     {
+
+        /// <summary>
+        /// Constructs an empty/default CacheEntryState
+        /// </summary>
+        /// <returns></returns>
+        public CacheEntryState() : this(DateTimeOffset.MinValue, "", 0)
+        {
+
+        }
+
+        /// <summary>
+        /// Constructs a CacheEntryState with all required properties
+        /// </summary>
+        /// <param name="lastAccess"></param>
+        /// <param name="etag"></param>
+        /// <param name="hitCount"></param>
+        public CacheEntryState(DateTimeOffset lastAccess, string etag, int hitCount)
+        {
+            LastAccess = lastAccess;
+            Etag = etag;
+            HitCount = hitCount;
+        }
+
         /// <summary>
         /// Expiration time of the cache entry. 
         /// </summary>
@@ -21,7 +44,7 @@ namespace HttpArchive
         /// The last time the cache entry was opened. 
         /// </summary>
         [JsonPropertyName("lastAccess")]
-        DateTimeOffset LastAccess { get; set; } = DateTime.MinValue;
+        DateTimeOffset LastAccess { get; set; }
 
         /// <summary>
         /// Etag 
@@ -33,7 +56,7 @@ namespace HttpArchive
         /// The number of times the cache entry has been opened.
         /// </summary>
         [JsonPropertyName("hitCount")]
-        int HitCount { get; set; } = 0;
+        int HitCount { get; set; }
 
         /// <summary>
         /// A comment provided by the user or the application.
