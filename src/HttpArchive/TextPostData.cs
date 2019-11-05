@@ -9,13 +9,13 @@ namespace HttpArchive
     /// <remarks>
     /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#postdata
     /// </remarks>
-    public class PlainTextEncodedPostData : PostData
+    public class TextPostData : PostData
     {
         /// <summary>
         /// Creates a default/empty post data object (with text)
         /// </summary>
         /// <returns></returns>
-        public PlainTextEncodedPostData() : this("", "")
+        public TextPostData() : this("", "")
         {
         }
 
@@ -24,7 +24,7 @@ namespace HttpArchive
         /// </summary>
         /// <param name="mimeType"></param>
         /// <param name="text"></param>
-        public PlainTextEncodedPostData(string mimeType, string text) : base(mimeType: mimeType)
+        public TextPostData(string mimeType, string text) : base(mimeType: mimeType)
         {
             Text = text;
         }
