@@ -16,8 +16,8 @@ namespace HttpArchive
         /// <remarks>
         /// Leave out this field if the information is not available.
         /// </remarks>
-        [JsonPropertyName("BeforeRequest")]
-        public CacheEntryState? BeforeRequest {get; set;}
+        [JsonPropertyName("beforeRequest")]
+        public BeforeRequest? BeforeRequest {get; set;}
 
         /// <summary>
         /// State of a cache entry after the request.
@@ -26,7 +26,7 @@ namespace HttpArchive
         /// Leave out this field if the information is not available.
         /// </remarks>
         [JsonPropertyName("afterRequest")]
-        public CacheEntryState? AfterRequest {get; set;}
+        public AfterRequest? AfterRequest {get; set;}
 
         /// <summary>
         /// A comment provided by the user or the application.

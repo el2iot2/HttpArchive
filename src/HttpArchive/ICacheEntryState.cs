@@ -9,30 +9,8 @@ namespace HttpArchive
     /// <remarks>
     /// https://github.com/ahmadnassri/har-spec/blob/master/versions/1.3.md#beforerequest--afterrequest
     /// </remarks>
-    public class CacheEntryState : IAllowsComment
+    public interface ICacheEntryState : IAllowsComment
     {
-
-        /// <summary>
-        /// Constructs an empty/default CacheEntryState
-        /// </summary>
-        /// <returns></returns>
-        public CacheEntryState() : this(DateTimeOffset.MinValue, "", 0)
-        {
-
-        }
-
-        /// <summary>
-        /// Constructs a CacheEntryState with all required properties
-        /// </summary>
-        /// <param name="lastAccess"></param>
-        /// <param name="etag"></param>
-        /// <param name="hitCount"></param>
-        public CacheEntryState(DateTimeOffset lastAccess, string etag, int hitCount)
-        {
-            LastAccess = lastAccess;
-            Etag = etag;
-            HitCount = hitCount;
-        }
 
         /// <summary>
         /// Expiration time of the cache entry. 
@@ -57,11 +35,5 @@ namespace HttpArchive
         /// </summary>
         [JsonPropertyName("hitCount")]
         int HitCount { get; set; }
-
-        /// <summary>
-        /// A comment provided by the user or the application.
-        /// </summary>
-        [JsonPropertyName("comment")]
-        public string? Comment { get; set; }
     }
 }
