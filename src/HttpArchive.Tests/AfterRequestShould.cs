@@ -16,7 +16,7 @@ namespace HttpArchive
             var json =
 @"{
   ""expires"": ""2009-04-16T15:50:36"",
-  ""lastAccess"": ""2009-16-02T15:50:34"",
+  ""lastAccess"": ""2009-02-16T15:50:34"",
   ""eTag"": """",
   ""hitCount"": 0,
   ""comment"": """"
@@ -24,7 +24,7 @@ namespace HttpArchive
             var deserialized = JsonSerializer.Deserialize<AfterRequest>(json);
             deserialized.Should().NotBeNull();
             deserialized.Expires.Should().Be(DateTimeOffset.Parse("2009-04-16T15:50:36"));
-            deserialized.LastAccess.Should().Be(DateTimeOffset.Parse("2009-16-02T15:50:34"));
+            deserialized.LastAccess.Should().Be(DateTimeOffset.Parse("2009-02-16T15:50:34"));
             deserialized.Etag.Should().Be("");
             deserialized.HitCount.Should().Be(0);
             deserialized.Comment.Should().Be("");
