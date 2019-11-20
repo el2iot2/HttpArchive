@@ -5,7 +5,7 @@ using FluentAssertions;
 namespace HttpArchive
 {
     /// <summary>
-    /// Unit tests for the header object
+    /// Unit tests for the <see cref="Log"/> object
     /// </summary>
     public class LogShould
     {

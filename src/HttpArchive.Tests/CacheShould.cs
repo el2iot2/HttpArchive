@@ -5,7 +5,7 @@ using FluentAssertions;
 namespace HttpArchive
 {
     /// <summary>
-    /// Unit tests for the cache object
+    /// Unit tests for the <see cref="Cache"/> object
     /// </summary>
     public class CacheShould
     {

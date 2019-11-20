@@ -6,9 +6,9 @@ using System;
 namespace HttpArchive
 {
     /// <summary>
-    /// Unit tests for the <see cref="AfterRequest"/> object
+    /// Unit tests for the <see cref="BeforeRequest"/> object
     /// </summary>
-    public class AfterRequestShould
+    public class BeforeRequestShould
     {
         [Fact]
         public void DeserializeSchemaExample()
@@ -21,7 +21,7 @@ namespace HttpArchive
   ""hitCount"": 0,
   ""comment"": """"
 }";
-            var deserialized = JsonSerializer.Deserialize<AfterRequest>(json);
+            var deserialized = JsonSerializer.Deserialize<BeforeRequest>(json);
             deserialized.Should().NotBeNull();
             deserialized.Expires.Should().Be(DateTimeOffset.Parse("2009-04-16T15:50:36"));
             deserialized.LastAccess.Should().Be(DateTimeOffset.Parse("2009-02-16T15:50:34"));
@@ -33,8 +33,8 @@ namespace HttpArchive
         [Fact]
         public void RoundtripDefault()
         {
-            var deserialized = JsonSerializer.Deserialize<AfterRequest>(
-                JsonSerializer.Serialize(new AfterRequest()));
+            var deserialized = JsonSerializer.Deserialize<BeforeRequest>(
+                JsonSerializer.Serialize(new BeforeRequest()));
             deserialized.Expires.Should().BeNull();
             deserialized.LastAccess.Should().Be(DateTimeOffset.MinValue);
             deserialized.Etag.Should().Be("");

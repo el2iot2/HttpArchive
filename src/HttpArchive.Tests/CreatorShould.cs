@@ -5,7 +5,7 @@ using FluentAssertions;
 namespace HttpArchive
 {
     /// <summary>
-    /// Unit tests for the creator object
+    /// Unit tests for the <see cref="Creator"/> object
     /// </summary>
     public class CreatorShould
     {

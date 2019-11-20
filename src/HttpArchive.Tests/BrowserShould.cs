@@ -5,7 +5,7 @@ using FluentAssertions;
 namespace HttpArchive
 {
     /// <summary>
-    /// Unit tests for the browser object
+    /// Unit tests for the <see cref="Browser"/> object
     /// </summary>
     public class BrowserShould
     {

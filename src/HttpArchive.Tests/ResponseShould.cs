@@ -6,7 +6,7 @@ using System;
 namespace HttpArchive
 {
     /// <summary>
-    /// Unit tests for the response object
+    /// Unit tests for the <see cref="Response"/> object
     /// </summary>
     public class ResponseShould
     {
